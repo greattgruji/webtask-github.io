@@ -1,0 +1,29 @@
+ access data by loop
+
+
+using System;
+using System.IO;
+using System.Text;
+namespace fileStreamdemo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            FileStream fileStream = new FileStream("G:\\Demo.txt", FileMode.OpenOrCreate,FileAccess.Write);
+            Console.WriteLine("enter the data");
+            string data = Console.ReadLine();
+            byte[] arr = Encoding.ASCII.GetBytes(data);
+            for (int ctr = 0; ctr < arr.Length; ctr++)
+            {
+                fileStream.WriteByte(arr[ctr]);
+
+            }
+           
+            fileStream.Close();
+                Console.WriteLine("write data..");
+            
+            Console.ReadLine();
+        }
+    }
+}

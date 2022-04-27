@@ -1,0 +1,16 @@
+
+
+...............
+ class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = new int[3];
+            arr[0] = 10;
+            arr[1] = 20;
+            arr[2] = 30;
+            Array.Resize(ref arr, 4);//collections
+            arr[3] = 40;
+            Console.WriteLine(arr[3]);
+        }
+    }

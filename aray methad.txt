@@ -1,0 +1,30 @@
+using System;
+
+namespace arraymethod
+{
+    class Program
+    {
+        static int  Max(int[] a)
+        {
+            int h = a[0];
+            for(int ctr=0; ctr<a.Length; ctr++)
+            {
+                if(a[ctr]>h)
+                {
+                    h = a[ctr];
+
+                }
+
+            }
+            return h;
+
+        }
+        static void Main(string[] args)
+        {
+            int[] arr = { 1, 2, 3, 4, 75, 6, 7, 8 };
+            int high = Max(arr);
+            Console.WriteLine("Max value is :" + high);
+        
+        }
+    }
+}
