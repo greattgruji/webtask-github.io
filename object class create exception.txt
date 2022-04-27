@@ -1,0 +1,41 @@
+
+                               object class create exception
+							    class MyException : ApplicationException
+    {
+        public MyException()
+        {
+            Console.WriteLine("Age must be greater then 18");
+        }
+    }
+    class Test
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                Console.WriteLine("Enter the  no");
+                int no = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("enter the name");
+                string name = Console.ReadLine();
+
+                Console.WriteLine("enter the age");
+                int age = int.Parse(Console.ReadLine());
+                if (age < 18)
+                {
+                    MyException me = new MyException();
+                    throw me;
+                }
+                else
+                {
+                    Console.WriteLine("no is:" + no);
+                    Console.WriteLine("name  is:" + name);
+                    Console.WriteLine("age is:" + age);
+                }
+            }
+            catch (MyException e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+    }
+}

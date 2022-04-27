@@ -1,0 +1,29 @@
+      > syntex of while loop
+	   int ctr(counter)=0;
+	   {
+	   
+	   
+	   .........................
+	   
+	   ctr=ctr+1;
+	   }
+	   
+	   >syntex of do while loop
+	   int ctr;
+	   ctr=0;
+	   do
+	   {
+	   
+	   
+	   ......................
+	   
+	   ctr = ctr+1;
+	   }
+	   while(ctr<5);
+	   
+	   >syntex of for loop
+	   for(int ctr=0;ctr<5;ctr=ctr+1)
+	   {
+	   ...............
+	   }
+	   

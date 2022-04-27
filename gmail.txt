@@ -1,0 +1,24 @@
+using System;
+class rani
+{
+public static void Main(string [] args)
+{
+Console.WriteLine("enter your gmail");
+string gmail=Console.ReadLine();
+if(gmail=="durgeshkumar3891@gmail.com")
+{
+Console.WriteLine("enter your password");
+string password = Console.ReadLine();
+if(password=="durgesh123")
+{
+Console.WriteLine("Logine successfull");
+}
+else
+{
+Console.WriteLine("Invalid password");
+}
+}
+else
+Console.WriteLine("Invalid gmail..");
+}
+}
