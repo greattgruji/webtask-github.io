@@ -1,0 +1,79 @@
+   controller
+...............................
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Webdurgeshkumar3.Models;
+using Webdurgeshkumar3.mvc;
+
+namespace Webdurgeshkumar3.Controllers
+{
+    public class HomeController : Controller
+    {
+
+        public ActionResult Index()
+        {
+            List<demo> obj = new List<demo>();
+            kumarEntities1 k = new kumarEntities1();
+            var res = k.Table_1.ToList();
+            foreach (var item in res)
+            {
+                obj.Add(new demo
+                {
+                    id = item.id,
+                    sal = item.sal,
+                    email = item.email,
+                    mob =item.mob
+                });
+            }
+            return View(obj);
+        }
+        [HttpGet]
+        public ActionResult AddTable()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddTable(demo obj)
+        {
+            kumarEntities1 k = new kumarEntities1();
+            Table_1 tb = new Table_1();
+            tb.id = obj.id;
+            tb.sal = obj.sal;
+            tb.mob = obj.mob;
+            tb.email = obj.email;
+            k.Table_1.Add(tb);
+            k.SaveChanges();
+
+
+            return RedirectToAction("Index");
+        }
+
+        //public ActionResult Delete( int id)
+        //{
+        //    kumarEntities1 k =new kumarEntities1();
+        //    var deleteitem = k.Table_1.Where(x => x.id == id).First();
+        //    k.Table_1.Remove(deleteitem);
+        //    k.SaveChanges();
+        //    return RedirectToAction(Index);
+        //}
+
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+
+    }
+}

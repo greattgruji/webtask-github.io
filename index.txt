@@ -1,0 +1,32 @@
+@model List<Webdurgeshkumar3.Models.demo>
+@{
+    ViewBag.Title = "Home Page";
+}
+<br />
+<p>
+    @Html.ActionLink("Add New Employee","AddTable", "Home")
+    <br />
+</p>
+    <table class=" table table-bordered table-condensed table-hover">
+        <tr>
+            <th>id</th>
+            <th>sal</th>
+            <th>email</th>
+            <th>mob</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        @foreach(var item in Model)
+            {
+    <tr>
+        <td>@item.id</td>
+        <td>@item.sal</td>
+        <td>@item.email</td>
+        <td>@item.mob</td>
+        <td><a href="@Url.Action("Delete","Home", new { item.id })"class=" btn btn-primary" >Delete</a></td>
+        <td><a href="@Url.Action("Edit","Home", new { item.id })"class=" btn btn-primary" >Edit</a></td>
+       
+    </tr>
+            }
+    </table>
+    

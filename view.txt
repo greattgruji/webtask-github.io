@@ -1,0 +1,26 @@
+@model Webdurgeshkumar3.Models.demo
+
+
+@using (Html.BeginForm("AddTable", "Home", FormMethod.Post))
+{
+<div align="center">
+    <div>
+        <h1>Add Employee Details</h1>
+        <label class=" form-group">please enter id</label>
+        @Html.TextBoxFor(m => m.id, "", new { @class = "form-conrol", @placeholder = "plese enter your id" })
+    </div>
+    <div>
+        <label class=" form-group">please enter sal</label>
+        @Html.TextBoxFor(m => m.sal, "", new { @class = "form-conrol", @placeholder = "plese enter your sal" })
+    </div>
+    <div>
+        <label class=" form-group">please enter email</label>
+        @Html.TextBoxFor(m => m.email, "", new { @class = "form-conrol", @placeholder = "plese enter your email" })
+    </div>
+    <div>
+        <label class=" form-group">please enter mob</label>
+        @Html.TextBoxFor(m => m.mob, "", new { @class = "form-conrol", @placeholder = "plese enter your mob" })
+    </div>
+</div>
+}            
+
